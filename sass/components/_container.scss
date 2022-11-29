@@ -1,0 +1,46 @@
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+
+    @include mobile {
+        width: 480px;
+    }
+
+    @include tablet {
+        width: 768px;
+    }
+
+    @include desktop {
+        width: 1200px;
+    }
+}
+
+.header__container {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__container {
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    @include desktop {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: baseline;
+    }
+}

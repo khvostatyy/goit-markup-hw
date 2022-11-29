@@ -1,0 +1,24 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 60px;
+    border-bottom: 1px solid #ECECEC;
+
+    background-color: $bgc;
+
+    z-index: 1;
+
+    @media (max-width: 767px),
+        (min-width: 768px) {
+            display: flex;
+            align-items: center;
+        }
+
+    @media screen and (min-width: 768px) {
+        height: 80px;
+    }
+
+}

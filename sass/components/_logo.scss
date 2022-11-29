@@ -1,0 +1,40 @@
+.nav__logo {
+    display: inline-block;
+
+    font-family: $logo-font;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: $tc;
+
+    @include tablet {
+        margin: 0 87px 0 0;
+    }
+
+    @include desktop {
+        margin: 0 93px 0 0;
+        font-size: 26px;
+    }
+
+    >.nav__logo--accent {
+        color: $third-tc;
+    }
+}
+
+/* footer logo */
+.footer__logo {
+    font-family: $logo-font;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    color: $fourth-tc;
+
+    @include desktop {
+        font-size: 26px;
+    }
+    
+    >.footer__logo--accent {
+        color: $third-tc;
+    }
+}

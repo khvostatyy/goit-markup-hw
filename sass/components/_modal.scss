@@ -1,0 +1,264 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    z-index: 10;
+}
+
+.backdrop--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop--hidden .backdrop-modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.backdrop-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    // width: 450px;
+    width: 100%;
+    height: 609px;
+
+    @include mobile {
+        width: 450px;
+    }
+
+    // @include tablet {
+    //     width: 450px;
+    //     height: 609px;
+    // }
+
+    @include desktop {
+        width: 528px;
+        height: 581px;
+    }
+    border-radius: 4px;
+
+    background: $bgc;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.backdrop-modal__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 8px 8px;
+    padding: 6px 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    background: $bgc;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+            fill: $third-bgc;
+        }
+}
+
+.backdrop-modal__icon {
+    width: 11px;
+    height: 11px;
+}
+
+/* form */
+.backdrop-form__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.backdrop-form__main-title {
+    display: block;
+    text-align: center;
+    margin-bottom: 12px;
+    width: 370px;
+
+    @include desktop {
+        width: 448px;
+    }
+
+    color: #212121;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+}
+
+.backdrop-form__labels+.backdrop-form__labels {
+    margin: 10px 0 0 0;
+}
+
+.backdrop-form__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.backdrop-form__group {
+    position: relative;
+}
+
+.backdrop-form__input {
+    padding: 0 0 0 42px;
+    // width: 370px;
+    width: 100%;
+    height: 40px;
+
+    @include mobile {
+        width: 370px;
+    }
+    
+    @include desktop {
+            width: 448px;
+            height: 40px;
+        }
+
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+
+    font-family: $main-font;
+    font-size: inherit;
+
+    outline: none;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+            border: 1px solid rgba(33, 150, 243, 1);
+        }
+}
+
+.backdrop-form__input:focus~.input-icon {
+    fill: rgba(33, 150, 243, 1);
+}
+
+.input-icon {
+    position: absolute;
+    margin: 0 0 0 10px;
+    top: 50%;
+    left: 0;
+
+    transform: translate(50%, -50%);
+
+    width: 12px;
+    height: 12px;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-form__textarea {
+    padding-top: 12px;
+    padding-left: 16px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+
+    font-family: $main-font;
+    font-size: inherit;
+
+    outline: none;
+    resize: none;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+            border: 1px solid rgba(33, 150, 243, 1);
+        }
+}
+
+.backdrop-form__form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backdrop-form__check {
+    padding-left: 1.2em;
+    margin: 20px 0px 30px 0px;
+
+    font-weight: 400;
+    font-size: 12px;
+
+    @include desktop {
+        font-size: 14px;
+    }
+
+    color: #757575;
+}
+
+.backdrop-form__check-input {
+    position: absolute;
+    appearance: none;
+}
+
+.backdrop-form__check-box {
+    position: absolute;
+    margin-left: -1.5em;
+    width: 15px;
+    height: 15px;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.backdrop-form__check-input:checked+.backdrop-form__check-box {
+    /* border-color: #2196F3; */
+    border-color: transparent;
+    background-color: #2196F3;
+    background-image: url(../images/vector.svg);
+    background-size: contain;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.backdrop-form__link {
+    color: #2196F3;
+}
+
+.backdrop-form__button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 52px;
+    width: 200px;
+    height: 50px;
+    border-style: none;
+    border-radius: 4px;
+
+    color: $fourth-tc;
+    background-color: $third-bgc;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.8;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+}
